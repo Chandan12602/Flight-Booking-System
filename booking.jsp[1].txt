@@ -1,0 +1,55 @@
+<%@ page import="java.util.*" %>
+<%@ page import="java.text.*" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Booking Confirmation</h1>
+        
+        <%-- Retrieve form parameters --%>
+        <% 
+           String from = request.getParameter("from");
+           String destination = request.getParameter("destination");
+           String date = request.getParameter("date");
+           String time = request.getParameter("time");
+           String passengerName = request.getParameter("passengerName");
+           String email = request.getParameter("email");
+           String age = request.getParameter("age");
+           String contact = request.getParameter("contact");
+           String address = request.getParameter("address");
+           String termsAndConditions = request.getParameter("termsAndConditions");
+        
+           // Validate if all required parameters are provided and terms and conditions are accepted
+           if(from != null && destination != null && date != null && time != null
+              && passengerName != null && email != null && age != null && contact != null && address != null
+              && termsAndConditions != null && !from.isEmpty() && !destination.isEmpty() && !date.isEmpty() && !time.isEmpty()
+              && !passengerName.isEmpty() && !email.isEmpty() && !age.isEmpty() && !contact.isEmpty() && !address.isEmpty() && "on".equals(termsAndConditions)) {
+               // Perform booking logic here (can be connecting to a database or external API)
+               // For demonstration purposes, just display the booking details
+               SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+               Date selectedDate = sdf.parse(date);
+        %>
+               
+               <p>Passenger Name: <%= passengerName %></p>
+               <p>Email ID: <%= email %></p>
+               <p>Age: <%= age %></p>
+               <p>Contact Number: <%= contact %></p>
+               <p>Address: <%= address %></p>
+               <p>Your flight from <%= from %> to <%= destination %> on <%= sdf.format(selectedDate) %> at <%= time %> has been booked successfully!</p>
+
+        <%
+           } else {
+               // Display an error message if any required parameter or terms and conditions are missing
+        %>
+               <p>Error: Please provide all required information for booking and accept the Terms and Conditions.</p>
+        <%
+           }
+        %>
+        
+        <a href="index.jsp">Go Back</a>
+    </div>
+</body>
+</html>

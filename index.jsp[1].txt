@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous">
+    <title>Flight Booking</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center mb-4">Welcome to Flight Booking</h1>
+                <form action="booking.jsp" method="post">
+
+                    <!-- From -->
+                    <div class="mb-3">
+                         <!-- Passenger Name -->
+                    <div class="mb-3">
+                        <label for="passengerName" class="form-label"><h3>Passenger Name:</h3></label>
+                        <input type="text" name="passengerName" id="passengerName" class="form-control">
+                    </div>
+
+                    <!-- Email ID -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><h3>Email ID:</h3></label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+
+                    <!-- Age -->
+                    <div class="mb-3">
+                        <label for="age" class="form-label"><h3>Age:</h3></label>
+                        <input type="number" name="age" id="age" class="form-control">
+                    </div>
+
+                    <!-- Contact Number -->
+                    <div class="mb-3">
+                        <label for="contact" class="form-label"><h3>Contact Number:</h3></label>
+                        <input type="tel" name="contact" id="contact" class="form-control">
+                    </div>
+
+                    <!-- Address -->
+                    <div class="mb-3">
+                        <label for="address" class="form-label"><h3>Address:</h3></label>
+                        <textarea name="address" id="address" class="form-control"></textarea>
+                    </div>
+                        
+                        <label for="from" class="form-label"><h3>Select From:</h3></label>
+                        <select name="from" id="from" class="form-select">
+                            <option value=""></option>
+                                     <option value="Ragivgandhi International Airport(Hydrabad)">Ragivgandhi International Airport(Hydrabad)</option>
+           <option value="Lucknow International Airport">Lucknow International Airport</option>
+           <option value="Chhatrapati Shivaji Maharaj International Airport(Mumbai)">Chhatrapati Shivaji Maharaj International Airport(Mumbai)</option>
+           <option value="Kempegowda International Airport">Kempegowda International Airport</option>
+           <option value="Delhi International Airport">Delhi International Airport</option>
+           <option value="Chennai International Airport">Chennai International Airport</option>
+           <option value="pune International Airport">pune International Airport</option>
+           <option value="Netaji Subhash Bose International Airport(kolkata)">Netaji Subhash Bose International Airport(kolkata)</option>
+                        </select>
+                    </div>
+
+                    <!-- Destination -->
+                    <div class="mb-3">
+                        <label for="destination" class="form-label"><h3>Select Destination:</h3></label>
+                        <select name="destination" id="destination" class="form-select">
+                            <option value=""></option>
+                            <option value="New York">New York</option>
+                            <option value="London">London</option>
+                            <option value="Paris">Paris</option>
+                            <option value="New zealand">New Zealand</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="united nations">United Nation</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Germany">Germany</option>
+                             <option value="Pakistan">Pakistan</option>
+                        </select>
+                    </div>
+                     <div>
+                     <label for="flightType"><h3>Select Flight Type:</h3></label>
+                     <select name="flightType" id="flightType">
+                     <option value=""></option>
+                     <option value="FirstClass">First Class</option>
+                     <option value="EconomyClass">Economy Class</option>
+                     <option value="Business class">Business class</option>
+                     <option value="Premium Economys">Premium Economy</option>
+                      </select><br><br>
+                        </div>
+                    <!-- Date -->
+                    <div class="mb-3">
+                        <label for="date" class="form-label"><h3>Select Date:</h3></label>
+                        <input type="date" name="date" id="date" class="form-control">
+                    </div>
+
+                    <!-- Time -->
+                    <div class="mb-3">
+                        <label for="time" class="form-label"><h3>Select Time:</h3></label>
+                        <input type="time" name="time" id="time" class="form-control">
+                    </div>
+<center>
+                    <!-- Passenger Details -->
+                    <h2 class="mt-4 mb-3">Passenger Details</h2>
+
+                                <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions">
+                        <label class="form-check-label" for="termsAndConditions">I agree to the Terms and Conditions</label>
+                    </div>
+                     <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Book</button>
+                    <!-- Cancel Button -->
+                    <button type="button" class="btn btn-secondary" onclick="cancelBooking()">Cancel</button>
+                  
+</center>
+                </form>
+            </div>
+        </div>
+    </div>
+      <script>
+        function cancelBooking() {
+            // You can add confirmation logic here if needed
+            window.location.href = "index.jsp"; // Redirect to the home page or another appropriate page
+        }
+    </script>
+</body>
+</html>
